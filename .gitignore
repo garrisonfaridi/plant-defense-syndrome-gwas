@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Large binary / data files — do not commit to repo
+genotypes/
+annotation/*.gz
+annotation/*.gaf
+annotation/go-basic.obo
+annotation/goslim_plant.obo
+
+# GEMMA output — large files
+gemma_output/lmm/*.assoc.txt
+gemma_output/lmm/*.log.txt
+gemma_output/bslmm/
+gemma_output/kinship/
+
+# macOS
+.DS_Store

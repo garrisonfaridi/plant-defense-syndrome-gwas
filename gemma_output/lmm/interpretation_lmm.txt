@@ -1,0 +1,19 @@
+LMM GWAS Interpretation — PC1 to PC8
+============================================================
+
+PC1: 27 significant SNPs (Bonferroni p<6.43e-08) on chromosome(s) [2, 5]. Top SNP 5:7634212 at Chr5:7634212 (p=5.473e-09, beta=-1.3525, negative effect on PC1 score). SNPs clustered in a tight window suggest a QTL; isolated hits may be noise.
+
+PC2: No SNPs survived Bonferroni correction (threshold p<6.43e-08). Top nominal hit: 1:24350279 at Chr1:24350279 (p=3.946e-06). Weak or no large-effect loci detected for this PC axis.
+
+PC3: No SNPs survived Bonferroni correction (threshold p<6.43e-08). Top nominal hit: 1:25956744 at Chr1:25956744 (p=1.134e-07). Weak or no large-effect loci detected for this PC axis.
+
+PC4: No SNPs survived Bonferroni correction (threshold p<6.43e-08). Top nominal hit: 2:2297550 at Chr2:2297550 (p=2.350e-06). Weak or no large-effect loci detected for this PC axis.
+
+PC5: 5 significant SNPs (Bonferroni p<6.43e-08) on chromosome(s) [5]. Top SNP 5:7720108 at Chr5:7720108 (p=4.627e-10, beta=-0.7727, negative effect on PC5 score). SNPs clustered in a tight window suggest a QTL; isolated hits may be noise.
+
+PC6: No SNPs survived Bonferroni correction (threshold p<6.43e-08). Top nominal hit: 2:10304025 at Chr2:10304025 (p=3.078e-06). Weak or no large-effect loci detected for this PC axis.
+
+PC7: No SNPs survived Bonferroni correction (threshold p<6.43e-08). Top nominal hit: 1:12039516 at Chr1:12039516 (p=5.395e-06). Weak or no large-effect loci detected for this PC axis.
+
+PC8: No SNPs survived Bonferroni correction (threshold p<6.43e-08). Top nominal hit: 5:3040602 at Chr5:3040602 (p=8.374e-06). Weak or no large-effect loci detected for this PC axis.
+
