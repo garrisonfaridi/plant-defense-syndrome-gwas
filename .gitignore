@@ -16,7 +16,11 @@ annotation/goslim_plant.obo
 # GEMMA output — large files
 gemma_output/lmm/*.assoc.txt
 gemma_output/lmm/*.log.txt
-gemma_output/bslmm/
+gemma_output/bslmm/*.param.txt
+gemma_output/bslmm/*.gamma.txt
+gemma_output/bslmm/*.hyp.txt
+gemma_output/bslmm/*.bv.txt
+gemma_output/bslmm/*.log.txt
 gemma_output/kinship/
 
 # macOS

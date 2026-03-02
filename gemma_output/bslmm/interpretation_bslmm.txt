@@ -1,0 +1,25 @@
+BSLMM Interpretation — PC1 to PC8
+============================================================
+
+Key parameters:
+  PVE   : Proportion of phenotypic variance explained by all SNPs (narrow-sense h²).
+  PGE   : Proportion of genetic variance from sparse (large-effect) SNPs vs polygenic background.
+  n_gamma: Effective number of SNPs with non-zero sparse effects.
+  PIP   : Posterior inclusion probability per SNP (>0.1 = candidate; >0.5 = strong).
+
+PC1: PVE=0.822 [0.742, 0.887] — proportion of phenotypic variance explained (narrow-sense heritability estimate). 95% CI for PVE excludes 0 — strong genetic signal detected. PGE=0.586 > 0.5 → most genetic variance comes from a small number of large-effect loci (oligogenic architecture). Estimated n_gamma (median)=21.0 causal SNPs contributing to genetic variance. 313 SNPs have PIP > 0.01 (candidates for follow-up).
+
+PC2: PVE=0.744 [0.654, 0.823] — proportion of phenotypic variance explained (narrow-sense heritability estimate). 95% CI for PVE excludes 0 — strong genetic signal detected. PGE=0.523 > 0.5 → most genetic variance comes from a small number of large-effect loci (oligogenic architecture). Estimated n_gamma (median)=44.0 causal SNPs contributing to genetic variance. 958 SNPs have PIP > 0.01 (candidates for follow-up).
+
+PC3: PVE=0.770 [0.693, 0.833] — proportion of phenotypic variance explained (narrow-sense heritability estimate). 95% CI for PVE excludes 0 — strong genetic signal detected. PGE=0.439 < 0.5 → genetic variance is spread across many small-effect SNPs (highly polygenic architecture). Estimated n_gamma (median)=28.0 causal SNPs contributing to genetic variance. 684 SNPs have PIP > 0.01 (candidates for follow-up).
+
+PC4: PVE=0.616 [0.498, 0.728] — proportion of phenotypic variance explained (narrow-sense heritability estimate). 95% CI for PVE excludes 0 — strong genetic signal detected. PGE=0.212 < 0.5 → genetic variance is spread across many small-effect SNPs (highly polygenic architecture). Estimated n_gamma (median)=18.0 causal SNPs contributing to genetic variance. 127 SNPs have PIP > 0.01 (candidates for follow-up).
+
+PC5: PVE=0.586 [0.472, 0.692] — proportion of phenotypic variance explained (narrow-sense heritability estimate). 95% CI for PVE excludes 0 — strong genetic signal detected. PGE=0.742 > 0.5 → most genetic variance comes from a small number of large-effect loci (oligogenic architecture). Estimated n_gamma (median)=23.0 causal SNPs contributing to genetic variance. 200 SNPs have PIP > 0.01 (candidates for follow-up).
+
+PC6: PVE=0.751 [0.651, 0.836] — proportion of phenotypic variance explained (narrow-sense heritability estimate). 95% CI for PVE excludes 0 — strong genetic signal detected. PGE=0.411 < 0.5 → genetic variance is spread across many small-effect SNPs (highly polygenic architecture). Estimated n_gamma (median)=44.0 causal SNPs contributing to genetic variance. 399 SNPs have PIP > 0.01 (candidates for follow-up).
+
+PC7: PVE=0.566 [0.398, 0.719] — proportion of phenotypic variance explained (narrow-sense heritability estimate). 95% CI for PVE excludes 0 — strong genetic signal detected. PGE=0.263 < 0.5 → genetic variance is spread across many small-effect SNPs (highly polygenic architecture). Estimated n_gamma (median)=14.0 causal SNPs contributing to genetic variance. 10 SNPs have PIP > 0.01 (candidates for follow-up).
+
+PC8: PVE=0.471 [0.329, 0.612] — proportion of phenotypic variance explained (narrow-sense heritability estimate). 95% CI for PVE excludes 0 — strong genetic signal detected. PGE=0.238 < 0.5 → genetic variance is spread across many small-effect SNPs (highly polygenic architecture). Estimated n_gamma (median)=21.0 causal SNPs contributing to genetic variance. 29 SNPs have PIP > 0.01 (candidates for follow-up).
+
