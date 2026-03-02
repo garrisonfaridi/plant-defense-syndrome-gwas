@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 # run_bslmm.sh — BSLMM GWAS + posterior summaries for 8 pseudotraits
 # Requires kinship.cXX.txt to already exist (run run_lmm.sh first).
-# Usage: bash Cirrone_Lab/run_bslmm.sh
-# Run from: /Users/garrisonfaridi/Documents/Documents_Cloud/BioCode/
+# Usage: bash scripts/shell/run_bslmm.sh
 
 set -euo pipefail
 
-BASE="Cirrone_Lab"
-GENO="${BASE}/genotypes/genotypes_305"
-PHENO="${BASE}/phenotype.txt"
-KINSHIP="${BASE}/gemma_output/kinship/kinship.cXX.txt"
-BSLMM_DIR="${BASE}/gemma_output/bslmm"
+REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+GENO="${REPO_ROOT}/genotypes/genotypes_305"
+PHENO="${REPO_ROOT}/data/phenotype.txt"
+KINSHIP="${REPO_ROOT}/results/kinship/kinship.cXX.txt"
+BSLMM_DIR="${REPO_ROOT}/results/bslmm"
 
 ts() { echo "[$(date '+%H:%M:%S')] $*"; }
 
@@ -37,5 +36,5 @@ ts "All BSLMM runs complete."
 # Step 2 — Posterior summaries and top SNP tables
 # ---------------------------------------------------------------------------
 ts "Summarizing BSLMM results..."
-python3 "${BASE}/summarize_bslmm.py"
+python3 "${REPO_ROOT}/scripts/python/summarize_bslmm.py"
 ts "Done. Results in ${BSLMM_DIR}/"

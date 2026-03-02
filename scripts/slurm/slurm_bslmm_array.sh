@@ -2,11 +2,11 @@
 # slurm_bslmm_array.sh
 # SLURM array job: runs BSLMM for PC1–PC8 in parallel (one job per PC).
 #
-# Submit from the repo root:
-#   sbatch slurm_bslmm_array.sh
+# Submit from anywhere:
+#   sbatch scripts/slurm/slurm_bslmm_array.sh
 #
 # Once complete, submit the summary step:
-#   sbatch --dependency=afterok:<JOBID> slurm_bslmm_summarize.sh
+#   sbatch --dependency=afterok:<JOBID> scripts/slurm/slurm_bslmm_summarize.sh
 #
 # ── Adjust the #SBATCH directives below for your cluster ──────────────────
 
@@ -39,13 +39,13 @@ GEMMA_BIN=${GEMMA_BIN:-gemma}
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-8}
 
 # ---------------------------------------------------------------------------
-# Paths  ── all relative to the repo root; adjust BASE if needed
+# Paths  (scripts/slurm/ → scripts/ → repo root)
 # ---------------------------------------------------------------------------
-BASE="$(dirname "$0")"                 # directory containing this script
-GENO="${BASE}/genotypes/genotypes_305"
-PHENO="${BASE}/phenotype.txt"
-KINSHIP="${BASE}/gemma_output/kinship/kinship.cXX.txt"
-BSLMM_DIR="${BASE}/gemma_output/bslmm"
+REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+GENO="${REPO_ROOT}/genotypes/genotypes_305"
+PHENO="${REPO_ROOT}/data/phenotype.txt"
+KINSHIP="${REPO_ROOT}/results/kinship/kinship.cXX.txt"
+BSLMM_DIR="${REPO_ROOT}/results/bslmm"
 
 mkdir -p "${BSLMM_DIR}"
 

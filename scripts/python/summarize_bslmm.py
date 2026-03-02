@@ -1,12 +1,14 @@
 """
 summarize_bslmm.py — BSLMM posterior summaries for 8 pseudotraits.
 
-Run from: /Users/garrisonfaridi/Documents/Documents_Cloud/BioCode/
-Outputs:
-  Cirrone_Lab/gemma_output/bslmm/summary_hyp.csv
-  Cirrone_Lab/gemma_output/bslmm/summary_bslmm.csv
-  Cirrone_Lab/gemma_output/bslmm/top_snps_PC{i}.csv   (i = 1..8)
-  Cirrone_Lab/gemma_output/bslmm/interpretation_bslmm.txt
+Run from any directory:
+    python scripts/python/summarize_bslmm.py
+
+Outputs (relative to repo root):
+  results/bslmm/summary_hyp.csv
+  results/bslmm/summary_bslmm.csv
+  results/bslmm/top_snps_PC{i}.csv   (i = 1..8)
+  results/bslmm/interpretation_bslmm.txt
 """
 
 import os
@@ -14,10 +16,10 @@ import numpy as np
 import pandas as pd
 
 # ---------------------------------------------------------------------------
-# Paths
+# Paths  (scripts/python/ → scripts/ → repo root)
 # ---------------------------------------------------------------------------
-BASE = "/Users/garrisonfaridi/Documents/Documents_Cloud/BioCode/Cirrone_Lab"
-BSLMM_DIR = os.path.join(BASE, "gemma_output", "bslmm")
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BSLMM_DIR = os.path.join(REPO_ROOT, "results", "bslmm")
 os.makedirs(BSLMM_DIR, exist_ok=True)
 
 HYP_COLS = ["pve", "pge", "rho", "pi", "n_gamma"]

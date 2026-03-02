@@ -1,29 +1,28 @@
 #!/usr/bin/env bash
-# run_lmm.sh — Kinship matrix + LMM GWAS + Manhattan plots for 8 pseudotraits
-# Usage: bash Cirrone_Lab/run_lmm.sh
-# Run from: /Users/garrisonfaridi/Documents/Documents_Cloud/BioCode/
+# run_lmm.sh — Kinship matrix + LMM GWAS + Manhattan/QQ plots for 8 pseudotraits
+# Usage: bash scripts/shell/run_lmm.sh
 
 set -euo pipefail
 
-BASE="Cirrone_Lab"
-GENO="${BASE}/genotypes/genotypes_305"
-PHENO="${BASE}/phenotype.txt"
-KINSHIP="${BASE}/gemma_output/kinship/kinship.cXX.txt"
-LMM_DIR="${BASE}/gemma_output/lmm"
+REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+GENO="${REPO_ROOT}/genotypes/genotypes_305"
+PHENO="${REPO_ROOT}/data/phenotype.txt"
+KINSHIP="${REPO_ROOT}/results/kinship/kinship.cXX.txt"
+LMM_DIR="${REPO_ROOT}/results/lmm"
 
 ts() { echo "[$(date '+%H:%M:%S')] $*"; }
 
 # ---------------------------------------------------------------------------
 # Step 1 — Compute centered relatedness (kinship) matrix
 # ---------------------------------------------------------------------------
-mkdir -p "${BASE}/gemma_output/kinship"
+mkdir -p "${REPO_ROOT}/results/kinship"
 ts "Computing kinship matrix..."
 gemma \
   -bfile "${GENO}" \
   -p "${PHENO}" \
   -gk 1 \
   -o kinship \
-  -outdir "${BASE}/gemma_output/kinship"
+  -outdir "${REPO_ROOT}/results/kinship"
 ts "Kinship done -> ${KINSHIP}"
 
 # ---------------------------------------------------------------------------
@@ -40,8 +39,8 @@ done
 ts "All LMM runs complete."
 
 # ---------------------------------------------------------------------------
-# Step 3 — Manhattan plots and summary statistics
+# Step 3 — Manhattan + QQ plots and summary statistics
 # ---------------------------------------------------------------------------
-ts "Generating Manhattan plots..."
-python3 "${BASE}/plot_lmm.py"
+ts "Generating Manhattan and QQ plots..."
+python3 "${REPO_ROOT}/scripts/python/plot_lmm.py"
 ts "Plotting done. Results in ${LMM_DIR}/"

@@ -25,8 +25,8 @@ mkdir -p logs
 # e.g. module load python/3.11, conda activate myenv, or source venv/bin/activate
 module load python 2>/dev/null || true
 
-BASE="$(dirname "$0")"
+REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 
 echo "[$(date '+%H:%M:%S')] Running BSLMM summary..."
-python3 "${BASE}/summarize_bslmm.py"
-echo "[$(date '+%H:%M:%S')] Summary complete. Results in ${BASE}/gemma_output/bslmm/"
+python3 "${REPO_ROOT}/scripts/python/summarize_bslmm.py"
+echo "[$(date '+%H:%M:%S')] Summary complete. Results in ${REPO_ROOT}/results/bslmm/"

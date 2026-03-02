@@ -2,15 +2,17 @@
 download_annotation.py
 Download TAIR10 annotation files needed for post-hoc LMM analysis.
 
-Run from BioCode/ directory:
-    python Cirrone_Lab/download_annotation.py
+Run from any directory:
+    python scripts/python/download_annotation.py
 """
 
 import os
 import sys
 import requests
 
-ANNOTATION_DIR = os.path.join(os.path.dirname(__file__), "annotation")
+# scripts/python/ → scripts/ → repo root
+REPO_ROOT      = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+ANNOTATION_DIR = os.path.join(REPO_ROOT, "annotation")
 
 FILES = [
     (

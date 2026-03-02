@@ -1,13 +1,15 @@
 """
 plot_lmm.py — Manhattan plots, QQ plots, and summary statistics for 8 LMM GWAS results.
 
-Run from: /Users/garrisonfaridi/Documents/Documents_Cloud/BioCode/
-Outputs:
-  Cirrone_Lab/gemma_output/lmm/manhattan_PC{i}.png   (i = 1..8)
-  Cirrone_Lab/gemma_output/lmm/qq_PC{i}.png          (i = 1..8)
-  Cirrone_Lab/gemma_output/lmm/qq_panel.png          (2×4 merged panel)
-  Cirrone_Lab/gemma_output/lmm/summary_lmm.csv
-  Cirrone_Lab/gemma_output/lmm/interpretation_lmm.txt
+Run from any directory:
+    python scripts/python/plot_lmm.py
+
+Outputs (relative to repo root):
+  results/lmm/manhattan_PC{i}.png   (i = 1..8)
+  results/lmm/qq_PC{i}.png          (i = 1..8)
+  results/lmm/qq_panel.png          (2×4 merged panel)
+  results/lmm/summary_lmm.csv
+  results/lmm/interpretation_lmm.txt
 """
 
 import os
@@ -19,10 +21,10 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 # ---------------------------------------------------------------------------
-# Paths
+# Paths  (scripts/python/ → scripts/ → repo root)
 # ---------------------------------------------------------------------------
-BASE = "/Users/garrisonfaridi/Documents/Documents_Cloud/BioCode/Cirrone_Lab"
-LMM_DIR = os.path.join(BASE, "gemma_output", "lmm")
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+LMM_DIR = os.path.join(REPO_ROOT, "results", "lmm")
 os.makedirs(LMM_DIR, exist_ok=True)
 
 # ---------------------------------------------------------------------------

@@ -2,8 +2,8 @@
 posthoc_lmm.py
 Post-hoc analysis: SNP → gene overlap (±500 kb) + GO enrichment.
 
-Run from BioCode/ working directory:
-    python Cirrone_Lab/posthoc_lmm.py
+Run from any directory:
+    python scripts/python/posthoc_lmm.py
 """
 
 import gzip
@@ -13,12 +13,13 @@ import warnings
 import pandas as pd
 
 # ---------------------------------------------------------------------------
-# Path setup — all paths derived from the script's own directory
+# Path setup  (scripts/python/ → scripts/ → repo root)
 # ---------------------------------------------------------------------------
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))  # .../BioCode/Cirrone_Lab
-ANNOT_DIR  = os.path.join(SCRIPT_DIR, "annotation")
-LMM_DIR    = os.path.join(SCRIPT_DIR, "gemma_output", "lmm")
-OUT_DIR    = os.path.join(SCRIPT_DIR, "gemma_output", "posthoc")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))           # scripts/python/
+REPO_ROOT  = os.path.dirname(os.path.dirname(SCRIPT_DIR))         # repo root
+ANNOT_DIR  = os.path.join(REPO_ROOT, "annotation")
+LMM_DIR    = os.path.join(REPO_ROOT, "results", "lmm")
+OUT_DIR    = os.path.join(REPO_ROOT, "results", "posthoc")
 
 GFF_PATH      = os.path.join(ANNOT_DIR, "TAIR10_GFF3_genes.gff.gz")  # Ensembl Plants gzipped GFF3
 GAF_PATH_GZ   = os.path.join(ANNOT_DIR, "tair.gaf.gz")               # GO Consortium TAIR GAF (compressed)

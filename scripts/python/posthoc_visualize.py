@@ -2,10 +2,10 @@
 posthoc_visualize.py
 Visualization, GO slim analysis, and biological report for post-hoc LMM results.
 
-Run from BioCode/ working directory:
-    python Cirrone_Lab/posthoc_visualize.py
+Run from any directory:
+    python scripts/python/posthoc_visualize.py
 
-Outputs (Cirrone_Lab/gemma_output/posthoc/):
+Outputs (results/posthoc/):
     go_dot_PC1.png
     go_dot_combined.png
     go_slim_PC1.csv
@@ -31,11 +31,12 @@ plt.style.use("seaborn-v0_8-whitegrid")
 # ---------------------------------------------------------------------------
 # Section 0 — Paths & shared setup
 # ---------------------------------------------------------------------------
-SCRIPT_DIR    = os.path.dirname(os.path.abspath(__file__))
-ANNOT_DIR     = os.path.join(SCRIPT_DIR, "annotation")
-OUT_DIR       = os.path.join(SCRIPT_DIR, "gemma_output", "posthoc")
+SCRIPT_DIR    = os.path.dirname(os.path.abspath(__file__))         # scripts/python/
+REPO_ROOT     = os.path.dirname(os.path.dirname(SCRIPT_DIR))       # repo root
+ANNOT_DIR     = os.path.join(REPO_ROOT, "annotation")
+OUT_DIR       = os.path.join(REPO_ROOT, "results", "posthoc")
 
-LOADINGS_PATH = os.path.join(SCRIPT_DIR, "pca_loadings_matrix_PMM.csv")
+LOADINGS_PATH = os.path.join(REPO_ROOT, "data", "pca_loadings_matrix_PMM.csv")
 GFF_PATH      = os.path.join(ANNOT_DIR, "TAIR10_GFF3_genes.gff.gz")
 GAF_PATH      = os.path.join(ANNOT_DIR, "tair.gaf")
 OBO_PATH      = os.path.join(ANNOT_DIR, "go-basic.obo")
